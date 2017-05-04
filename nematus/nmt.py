@@ -301,7 +301,6 @@ def build_model(tparams, options):
 
     if options['use_dropout']:
         proj_h *= shared_dropout_layer((n_samples, options['dim']), use_noise, trng, retain_probability_hidden, scaled)
-        emb *= shared_dropout_layer((n_samples, options['dim_word']), use_noise, trng, retain_probability_emb, scaled)
         ctxs *= shared_dropout_layer((n_samples, 2*options['dim']), use_noise, trng, retain_probability_hidden, scaled)
 
     # weights (alignment matrix) #####LIUCAN: this is where the attention vector is.
